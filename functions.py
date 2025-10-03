@@ -5,7 +5,7 @@ def get_todos(filepath=FILEPATH):
         todos_local = file_local.readlines()
     return  todos_local
 
-def write_todos(todos_arg, filepath=FILEPATH):
+def write_todos(todos_arg: object, filepath: object = FILEPATH) -> None:
     """write the to-do items list in the text"""
     with open(filepath,'w') as file:
         file.writelines(todos_arg)
