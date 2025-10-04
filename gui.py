@@ -6,7 +6,6 @@ add_button = sg.Button("Add")
 edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
-
 list_box = sg.Listbox(values=functions.get_todos(), key="todos_list",
                       enable_events=True, size=[45,10])
 window = sg.Window('my to-do app',
@@ -15,10 +14,10 @@ window = sg.Window('my to-do app',
                            [exit_button]],
                    font=("Helvetica", 15))
 while True:
-    event, values = window.read()
-    print(event)
+    events, values = window.read()
+    print(events)
     print(values)
-    match event:
+    match events:
         case "Add":
             todos = functions.get_todos()
             new_todo = values['add_todo'] +"\n"
