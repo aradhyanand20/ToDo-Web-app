@@ -13,8 +13,9 @@ clock =  sg.Text('', key ="clock")
 sg.theme("DarkTeal12")
 label= sg.Text("Type  your to do")
 input_box = sg.InputText(tooltip="enter your task", key = "add_todo")
-add_button = sg.Button(size =3, image_source="add.png", mouseover_colors="lightGrey",
-                       tooltip= "Add todo", key ='Add')
+# add_button = sg.Button(size =3, image_source="add.png", mouseover_colors="lightGrey",
+#                        tooltip= "Add todo", key ='Add')
+add_button = sg.Button("Add")
 edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
@@ -32,7 +33,7 @@ while True:
     match events:
         case "Add":
             todos = functions.get_todos()
-            new_todo = values['add_todo'] +"\n"
+            new_todo = values['add_todo']
             todos.append(new_todo)
             functions.write_todos(todos)
             window['todos_list'].update(values=todos)
